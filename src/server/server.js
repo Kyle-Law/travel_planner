@@ -11,5 +11,3 @@ app.get('/', function (req, res) {
 app.listen(port, async () => {
     console.log(`The server is runing on http://localhost:${port}`);
 })
-
-module.exports = sum; 

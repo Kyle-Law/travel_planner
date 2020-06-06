@@ -1,111 +1,161 @@
-// body{
-//     background: #fffff8;
-//     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+*, *::after,*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: yellowRabbit;
+    // src: url("media/font/yellow_rabbit/yellow_rabbit.otf") format("opentype");
+}
+
+body {
+    min-height: 100%;
+    font-family: yellowRabbit;
+}
+
+.container {
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    // background-color: lightskyblue;
+    background: url('../media/image/airplane.jpg') no-repeat center center fixed;
+}
+
+.container h1 {
+    color: white;
+    font-size: 6rem;
+    text-shadow: 2px 5px #000;
+}
+
+form {
+    display: grid;
+    // grid-auto-flow: column;
+    grid-gap: 10px;
+    align-items: center;
+    grid-template-columns: repeat(3,max-content);
+    // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) 100px;
+}
+
+form input {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+form label {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px #000;
+}
+
+form input[type=submit] {
+    background-color: red;
+    padding: 3px 10px;
+    border-color: red;
+    transition: 0.25s;
+    grid-column: 1/ span 3;
+    width: 100%;
+    font-family: "Font Awesome 5 Free"; // for the open access version
+    font-size: 1.3333333333333333em;
+    font-weight: 900;
+}
+
+form input[type=submit]:hover {
+    color: red;
+    background: white;
+    cursor: pointer;
+    
+}
+
+
+
+.city_name {
+    font-weight: 800;
+}
+
+.result {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+ul {
+    display: grid;
+    // grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+    grid-gap: 20px;
+    padding: 25px;
+
+}
+
+ul li img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    // position: absolute;
+    // bottom: 0px;
+    // right: 20px;
+    clear: both;
+    // position: relative;
+    z-index: 10;
+    height: 3em;
+    float: right;
+    margin-right: 10px;
+}
+
+.result_container {
+    color: white;
+    width: max-content;
+    min-height: 400px;
+}
+
+#landing_wrapper {
+    background-repeat: no-repeat;
+}
+
+
+
+// Media Queries
+@media (max-width:1159px) {
+    form {
+        grid-auto-flow:row;
+        grid-template-columns: repeat(3,max-content);
+    }
+
+    #submit {
+        grid-column: 1 / -1;
+        width: max-content;
+        justify-self: center;
+    }
+}
+
+@media (max-width:768px) {
+    .container h1 {
+        font-size: 4rem;
+    }
+
+    form label, form input {
+        font-size: 1rem;
+    }
+    
+    form label {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+// Unnecessary Codes
+// input[type="submit"] {
+//     font-family: "Font Awesome 5 Free"; // for the open access version
+//     font-size: 1.3333333333333333em;
+//     font-weight: 900;
 // }
-
-// #app{
-//     display: grid;
-//     grid-auto-rows: minmax(150px, auto);
-//     /* grid-template-columns:  */
-//     height:100vh;
-//     background: #f23557;
-//     color: #f0d43a;
-//     justify-content: center;
-//     grid-gap: 1em;
-//     font-size: 20px;
-//     font-family: 'Oswald', sans-serif;
-// }
-
-// .holder{
-
-// }
-
-// .entry{
-//     background: rgba(59, 74, 107, .4);
-// }
-
-// #entryHolder{
-
-// }
-
-// #date{
-
-// }
-
-// #temp{
-
-// }
-
-// #content{
-
-// }
-
-// .headline {
-
-// }
-// .title{
-
-// }
-
-// /*  Basic Styling To Override Default For Basic HTML Elements */
-// label{
-//     display:block;
-//     font-size: 27px;
-// }
-
-// input{
-//     display:block;
-//     height: 60px;
-//     width: 320px;
-//     background:#22b2da;
-//     color: #f0d43a;
-//     font-size: 20px;
-//     font-family: 'Oswald', sans-serif;
-//     border: none;
-// }
-
-// button{
-//     width: 400px;
-//     height: 100px;
-//     background: #3b4a6b;
-//     color: #f0d43a;
-//     font-size: 26px;
-//     font-family: 'Oswald', sans-serif;
-//     border: none;
-//     box-shadow: 2px 4px 5px #444;
-// }
-// h1{
-//     font-size: 36px;
-// }
-
-// textarea{
-//     background:#22b2da;
-//     color: #f0d43a;
-//     font-size: 20px;
-//     font-family: 'Oswald', sans-serif;
-// }
-// /* Reset style for HTML element on active to have no border*/
-// input:focus,
-// select:focus,
-// textarea:focus,
-// button:focus {
-//     outline: none;
-// }
-// /* Style for Placeholder Text*/
-// ::placeholder { /* Firefox, Chrome, Opera */ 
-//     color: #f0d43a; 
-//     font-family: 'Oswald', sans-serif;
-
-// } 
-  
-// :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-//     color: #f0d43a; 
-//     font-family: 'Oswald', sans-serif;
-
-// } 
-  
-// ::-ms-input-placeholder { /* Microsoft Edge */ 
-//     color: #f0d43a; 
-//     font-family: 'Oswald', sans-serif;
-
-// } 

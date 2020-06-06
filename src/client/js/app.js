@@ -48,25 +48,23 @@ button.addEventListener('click',(e)=>{
     
 })
 
-// function getCurrency(country) {
-//     fetch(`https://restcountries.eu/rest/v2/name/${country}`).then((res)=>res.json()).then((obj) => {
-//         currency = obj[0]['currencies'][0]['code']
-//         console.log(currency)
-//         return currency
-//     })
-// }
 
-const getCurrency = async country => await fetch(`https://restcountries.eu/rest/v2/name/${country}`).then((res)=>res.json()).then((obj)=>{
+const getCurrency = async country => await fetch(`https://restcountries.eu/rest/v2/name/${country}`).then((res)=>res.json()).then((obj)=>{ 
     let currency
-    for (let c of obj[0]['currencies']) {
-        // console.log(c['code'])
-        if (availableCurrency.includes(c['code'])) {
-            currency = c['code']
+    if (obj['status'] != 404) {
+        for (let c of obj[0]['currencies']) {
+            // console.log(c['code'])
+            if (availableCurrency.includes(c['code'])) {
+                currency = c['code']
+            }
+            else {
+                currency = 'USD'
+            }
         }
-        else {
-            currency = 'USD'
-        }
+    } else {
+        currency = 'USD'
     }
+    
     return currency
 })
 
@@ -128,11 +126,7 @@ function isValidDates(dateStart,dateEnd) {
     return (dateEnd > dateStart) && (dateStart > Date.now()-aDay)
 }
 
-
-
 const getCoordinate = async city => await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&city=${cleanSpace2(city)}&key=eb1955dad12148b9a6716786f15d6d0f`).then((res)=>res.json()).then((obj)=>[obj['lon'],obj['lat']])
-
-
 
 // For RestCountries API and Pixabay API
 function cleanSpace1(string) {
@@ -193,4 +187,13 @@ function addDate(date,value=1) {
 // async function getExchangeRate(baseCurrency,priceCurrency) {
 //     await fetch(`https://api.exchangeratesapi.io/latest?base=${baseCurrency}`).then((res)=>res.json().then((obj)=> obj['rates'][priceCurrency]
 //     ))
+// }
+
+
+// function getCurrency(country) {
+//     fetch(`https://restcountries.eu/rest/v2/name/${country}`).then((res)=>res.json()).then((obj) => {
+//         currency = obj[0]['currencies'][0]['code']
+//         console.log(currency)
+//         return currency
+//     })
 // }
