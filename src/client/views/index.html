@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Weather Journal</title>
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
- <body>
-<div id = "app">
-  <div class ="holder headline">
-    Weather Journal App
-  </div>
-  <div class ="holder zip">
-    <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter zip code here">
-  </div>
-  <div class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-    <button id="generate" type = "submit"> Generate </button>
-  </div>
-  <div class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
-   <div id = "entryHolder">
-    <div id = "date"></div> 
-   <div id = "temp"></div>
-   <div id = "content"></div>
-  </div>
-  </div>
-  </div>
-<script src="app.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script defer src="script.js"></script> -->
+    <script defer src="https://kit.fontawesome.com/6887534a1e.js" crossorigin="anonymous"></script>
 
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Planner <i class="fas fa-plane"></i></h1>
+        <form action="">
+            <label for="departure">From: </label>
+            <input type="text" placeholder="Enter a country" id="departure">
+            <input type="datetime-local" id="dateStart">
+            <label for="destination">To:</label>
+            <input type="text" placeholder="Enter a country" id="destination">
+            <input type="datetime-local" id="dateEnd">
+            <input type="submit" value="&#xf002;" id="submit">
+        </form>
+    </div>
+    <div class="result_container" id="#landing_wrapper">
+        <p class="result"></p>
+        <p class="exchange_rate"></p>
+        <ul></ul>
+    </div>
+
+    <footer>
+        Powered by WeatherBit, Pixabay, RestCountries and ExchangeRates API
+    </footer>
 </body>
 </html>
