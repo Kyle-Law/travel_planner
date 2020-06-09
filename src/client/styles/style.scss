@@ -7,8 +7,7 @@
 
 body {
     min-height: 100%;
-    font-family: yellowRabbit;
-    font-family: 'Glegoo', serif;
+    // font-family: 'Glegoo', serif;
     font-family: 'Shadows Into Light', cursive;
 }
 
@@ -117,12 +116,21 @@ footer {
     height: 3em;
     float: right;
     margin-right: 10px;
+    text-align: right;
+}
+
+.centralize {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
 }
 
 .result_container {
     color: white;
     width: max-content;
     min-height: 400px;
+    text-align: center;
+    border-radius: 4px;
 }
 
 #landing_wrapper {
@@ -134,22 +142,32 @@ footer {
 // Media Queries
 @media (max-width:1159px) {
     form {
-        grid-auto-flow:row;
-        grid-template-columns: repeat(3,max-content);
+        // grid-auto-flow:row;
+        // grid-template-columns: repeat(3,max-content);
+        // grid-auto-flow
     }
 }
 
 @media (max-width:768px) {
     .container h1 {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
     .container h3 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     form label, form input {
         font-size: 1rem;
+        width: 100%;
+        margin: 3px 0;
+
     }
     
     form label {
