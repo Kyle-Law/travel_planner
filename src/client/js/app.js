@@ -152,8 +152,8 @@ function random_item(list){
     return list[Math.floor(Math.random()*list.length)]
 }
 
-// export { random_item, addDate, dateList, betweenDates, cleanSpace1, cleanSpace2 }
-export { cleanSpace1 }
-export { cleanSpace2 }
+export { random_item, addDate, dateList, betweenDates, cleanSpace1, cleanSpace2 }
+// export { cleanSpace1 }
+// export { cleanSpace2 }
 // module.exports = cleanSpace1;
 // module.exports = cleanSpace2;

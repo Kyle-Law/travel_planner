@@ -1,6 +1,6 @@
-// const { random_item, addDate, dateList, betweenDates, cleanSpace1, cleanSpace2 } = require('./app');
-const {cleanSpace1} = require('./app')
-const {cleanSpace2} = require('./app')
+const { random_item, addDate, dateList, betweenDates, cleanSpace1, cleanSpace2 } = require('./app');
+// const {cleanSpace1} = require('./app')
+// const {cleanSpace2} = require('./app')
 
 
 test('Spacing cleaning helpers', () => {
