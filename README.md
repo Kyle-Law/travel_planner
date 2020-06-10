@@ -2,6 +2,11 @@
 
 > A simple web app for travellers, which it could return the weather forecasts(16 days maximum) and currency exchange rates of the destination. 
 
+
+- The web app will return 16 days forecast weathers from Weatherbit API, exchange rates from ExchangeRates API, and background image from PIxabay API
+- For example, USA -> Singapore will return exchange rate of SGD/USD and USD/SGD.
+- USD is the default currency if the country Exchange Rate is not covered by the API. 
+
 ![image](https://user-images.githubusercontent.com/55923773/84244916-e5310480-ab36-11ea-8b17-4b5812a691df.png)
 
 ## Built With
