@@ -21,7 +21,7 @@ export const updateUI = (obj,dateStart="", dateEnd="") => {
       li.innerHTML = `
           <p class="date">${dateStart.getDate()}/${dateStart.getMonth() + 1}</p>
           <img class="icon" src=${iconSrc}></img>
-          <p class="temp">${temp}</p>
+          <p class="temp">${temp}°</p>
       `
       ul.appendChild(li)
       addDate(dateStart)

@@ -25,6 +25,10 @@
 5) Open `http://localhost:3000/` on your web browser.
 6) Enjoy :)
 
+## Testing
+1) Run `npm install` to install dependencies.
+2) Run `npm run test` to test.
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome! Start by:
