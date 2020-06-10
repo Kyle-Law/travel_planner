@@ -1,0 +1,21 @@
+
+.container {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%),url('../media/image/airplane.jpg') no-repeat center center fixed;
+}
+
+.container h1 {
+  color: white;
+  font-size: 6rem;
+  text-shadow: 2px 5px #000;
+}
+
+.container h3 {
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px #000;
+  text-align: center;
+}

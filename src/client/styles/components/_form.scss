@@ -1,0 +1,41 @@
+
+form {
+  display: grid;
+  grid-gap: 10px;
+  align-items: center;
+  grid-template-columns: repeat(3,max-content);
+  margin: 15px;
+}
+
+form input {
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+form label {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px #000;
+}
+
+form input[type=submit] {
+  background-color: red;
+  padding: 3px 10px;
+  border-color: red;
+  transition: 0.25s;
+  grid-column: 1/ span 3;
+  width: 200px;
+  justify-self: center;
+  font-family: "Font Awesome 5 Free"; // for the open access version
+  font-size: 1.3333333333333333em;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+form input[type=submit]:hover {
+  color: red;
+  background: white;
+  cursor: pointer;
+}
