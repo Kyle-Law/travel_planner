@@ -11,3 +11,10 @@ app.get('/', function (req, res) {
 app.listen(port, async () => {
     console.log(`The server is runing on http://localhost:${port}`);
 })
+
+//for testing
+const addition = (a, b) => {
+  return a + b;
+}
+
+module.exports = addition; 
