@@ -1,7 +1,5 @@
 const { result_container, availableCurrency } = require('./variables');
 
-
-
 // Pixabay API
 export const setBackgroundImage = (key,destination) => {
   fetch(`https://pixabay.com/api/?key=${key}&q=${destination}&image_type=photo&pretty=true`).then((res)=>res.json())
