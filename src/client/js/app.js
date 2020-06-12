@@ -1,7 +1,7 @@
 const { button, pixabay_key, exchange_rate, travel_quotes, travel_quote } = require('./variables');
-const { cleanSpace1, cleanSpace2, betweenDates,  random_item } = require('./helpers');
+const { cleanSpace1, cleanSpace2, betweenDates,  random_item, dateList } = require('./helpers');
 const { updateUI } = require('./updateUI');
-const { setBackgroundImage, getExchangeRate, getWeather, getCurrency } = require('./api');
+const { setBackgroundImage, getExchangeRate, getWeather, getCurrency, postData } = require('./api');
 
 travel_quote.innerHTML = random_item(travel_quotes)
 
@@ -26,12 +26,21 @@ button.addEventListener('click',(e)=>{
                 er.then((data)=>{
                     exchange_rate.innerHTML = `${value2}/${value1}: ${data.toFixed(4)} <br> ${value1}/${value2}: ${(1/data).toFixed(4)}`
                 })
-                // console.log(er)
             })
         })
         setBackgroundImage(pixabay_key,cleanedDestination)
-        getWeather(weatherBitUrl).then((obj)=>{
-            updateUI(obj,dateStart,dateEnd)
+        getWeather(weatherBitUrl).then((obj)=> {
+            const iconArray = []
+            const tempArray = []
+            for (const i of dateList(dateStart,dateEnd)) {
+                iconArray.push(obj.data[i]['weather']['icon'])
+                tempArray.push(obj.data[i]['temp'])
+            }
+            
+            postData('/addWeather',{destination: obj.city_name,icon:iconArray,temp: tempArray, dateStart:dateStart, dateEnd:dateEnd})
+        })
+        .then(()=>{
+            updateUI()
         })
     // } else {
         // window.alert("Invalid Date")
