@@ -50,6 +50,6 @@ export const postData = async ( url = '', data = {})=>{
       const newData = await response.json();
       return newData
     }catch(error) {
-    console.log("error", error);
+      console.log("error", error);
     }
 }

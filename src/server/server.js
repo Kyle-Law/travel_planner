@@ -2,9 +2,12 @@ const express = require('express')
 const app = express();
 const port = process.env.PORT || 3000
 const projectData = [];
+const bodyParser = require ('body-parser');
 
 app.use(express.static('dist'));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // app.get('/', function (req, res) {
 //   res.sendFile('/dist/index.html');
 // })
@@ -15,6 +18,7 @@ app.listen(port, async () => {
 
 app.post('/addWeather',addWeather);
 function addWeather(req,res) {
+    console.log(req.body)
     newEntry = {
         destination: req.body.destination,
         icon: req.body.icon,

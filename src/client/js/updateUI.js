@@ -32,6 +32,7 @@ export const updateUI = async () => {
     const request = await fetch('/all');
     try{
       const allData = await request.json();
+      console.log(allData)
       addView(allData)
     }catch(error){
       console.log("error", error);
@@ -41,11 +42,12 @@ export const updateUI = async () => {
 
 function addView(ar){
     ar.forEach((data,index)=>{
-        console.log
+        console.log(data)
         ul.innerHTML = ""
         result.innerHTML = `
         <h3>Weather forecast of <span class="city_name">${data.destination.toUpperCase()}</span> from ${data.dateStart.getDate()}/${data.dateStart.getMonth() + 1} to ${data.dateEnd.getDate()}/${data.dateEnd.getMonth()+1}</h3>
         `
+        console.log('hehe')
         for (const i of dateList(data.dateStart,data.dateEnd)) {
             let iconSrc
             let temp
@@ -65,5 +67,6 @@ function addView(ar){
             ul.appendChild(li)
             addDate(dateStart)
         }
+
     })
   }
