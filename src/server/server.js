@@ -6,7 +6,7 @@ const projectData = [];
 app.use(express.static('dist'));
 
 // app.get('/', function (req, res) {
-//   res.sendFile('dist/index.html');
+//   res.sendFile('/dist/index.html');
 // })
 
 app.listen(port, async () => {
