@@ -10,7 +10,6 @@ button.addEventListener('click',(e)=>{
     const departure = document.querySelector('#departure').value
     const cleanedDeparture = cleanSpace1(departure) // For RestCountries API
     const destination = document.querySelector('#destination').value;
-    // console.log(destination)
     const cleanedDestination = cleanSpace1(destination) // For Pixabay API and RestCountries API
     const dateStartString = document.querySelector('#dateStart').value;
     dateStart = new Date(dateStartString);
@@ -31,14 +30,13 @@ button.addEventListener('click',(e)=>{
         })
         setBackgroundImage(pixabay_key,cleanedDestination)
         getWeather(weatherBitUrl).then((obj)=> {
-            // console.log(obj)
             const iconArray = []
             const tempArray = []
             for (const i of dateList(dateStart,dateEnd)) {
                 iconArray.push(obj.data[i]['weather']['icon'])
                 tempArray.push(obj.data[i]['temp'])
             }
-            postData('/addWeather',{destination: obj.city_name,icon:iconArray,temp: tempArray, dateStart:dateStart, dateEnd:dateEnd})
+            postData('/addWeather',{destination: obj.city_name,icon:iconArray,temp: tempArray, dateStart:dateStart.toString(), dateEnd:dateEnd.toString()})
         })
         .then(()=>{
             updateUI()

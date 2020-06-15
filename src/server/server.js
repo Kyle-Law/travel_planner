@@ -18,13 +18,13 @@ app.listen(port, async () => {
 
 app.post('/addWeather',addWeather);
 function addWeather(req,res) {
-    console.log(req.body)
+    // console.log(req.body)
     newEntry = {
         destination: req.body.destination,
         icon: req.body.icon,
         temp: req.body.temp,
         dateStart: req.body.dateStart,
-        dateEnd:req.body.dateEnd
+        dateEnd: req.body.dateEnd
     }
     projectData.unshift(newEntry)
     res.send(projectData);
