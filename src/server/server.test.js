@@ -1,5 +1,7 @@
 const request = require('supertest')
-const app = require('./server')
+// const app = require('./server')
+
+import { app } from './server'
 
 describe('Post Endpoints', () => {
   it('should create a new post', async () => {

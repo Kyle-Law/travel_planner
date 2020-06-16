@@ -35,3 +35,5 @@ app.get('/all', getData)
 function getData(req, res) {
     res.send(projectData);
 };
+
+export { app }
