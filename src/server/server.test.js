@@ -24,7 +24,7 @@ describe('Post Endpoints', () => {
         dateStart: 'Tue Jun 16 2020 15:53:00 GMT+0800 (Malaysia Time)',
         dateEnd: 'Wed Jun 24 2020 15:53:00 GMT+0800 (Malaysia Time)'
       })
-    expect(res.statusCode).toEqual(500)
-    // expect(res.body).toHaveProperty('destination')
+    expect(res.statusCode).toEqual(200)
+    expect(res.body[0]).toHaveProperty('destination')
   })
 })

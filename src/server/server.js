@@ -19,16 +19,21 @@ app.listen(port, async () => {
 app.post('/addWeather',addWeather);
 function addWeather(req,res) {
     // console.log(req.body)
-    newEntry = {
-        destination: req.body.destination,
-        icon: req.body.icon,
-        temp: req.body.temp,
-        dateStart: req.body.dateStart,
-        dateEnd: req.body.dateEnd
+    try {
+        const newEntry = {
+            destination: req.body.destination,
+            icon: req.body.icon,
+            temp: req.body.temp,
+            dateStart: req.body.dateStart,
+            dateEnd: req.body.dateEnd
+        }
+        projectData.unshift(newEntry)
+        res.send(projectData);
+        console.log(projectData);
+    } catch (error) {
+        console.log("Error",error)
     }
-    projectData.unshift(newEntry)
-    res.send(projectData);
-    console.log(projectData);
+    
 };
 
 app.get('/all', getData)
