@@ -36,4 +36,4 @@ function getData(req, res) {
     res.send(projectData);
 };
 
-export { app }
+module.exports = app
